@@ -1,0 +1,2 @@
+This is a list of keyboard shortcut I find useful when working with Mac:
+Shift + Command + SquareBracketKey 		Switch browser tab
