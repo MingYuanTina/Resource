@@ -1,4 +1,4 @@
-This is a list of keyboard shortcut I find useful when working with Mac:
+Tis is a list of keyboard shortcut I find useful when working with Mac:
 Shift + Command + SquareBracketKey 		Switch browser tab
 Command + W 					Close current window
 Command + Q					Close all window
@@ -9,4 +9,10 @@ Command + V					Paste
 Command + F					Find
 Command + Shift + 3				Take screenshot of entire screen
 Command + Shift + 4 				Take screenshot
+
+
+// May 6th, 2017
+Command + Shift + T				New Window 
+Command + LeftArrow				Go Back
+Command + RightArrow				Go Forward
 
