@@ -1,0 +1,47 @@
+# Language; Ruby
+# Problem: Find the largest kth element
+# Date: May 9th, 2017
+
+def find_kth_largest(nums, k)
+  l = nums.length - k
+  quick_select(nums, l)
+end
+
+def quick_select(nums, k)
+  index = 0 
+  pivotIndex = partition(nums, index)
+  if pivotIndex == k then
+    return nums[k]
+  elsif pivotIndex > k then
+    quick_select(nums[0..pivotIndex-1], k)
+  else 
+    quick_select(nums[pivotIndex+1..nums.length-1], k-pivotIndex-1)
+  end
+end
+
+def partition(nums, p)
+  temp = nums[0]
+  nums[0] = nums[p]
+  nums[p] = temp
+  i = 1
+  j = nums.length-1
+  while true do
+    while i < nums.length && nums[i] <= nums[0] do
+      i = i + 1
+    end
+    while j >= 1 && nums[j] > nums[0] do
+      j = j - 1
+    end
+    if j < i then 
+      break
+    else
+      temp2 = nums[i]
+      nums[i] = nums[j]
+      nums[j] = temp2
+    end
+  end
+  temp1 = nums[0]
+  nums[0] = nums[j]
+  nums[j] = temp1
+  return j
+end
