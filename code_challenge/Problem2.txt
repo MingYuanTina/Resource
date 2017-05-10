@@ -1,0 +1,31 @@
+# Problem: Given array of numbers, found two numbers that adds up#	to a specific target number
+# Example: [2,3,4] 6 ==> [0,2]
+# Language: Ruby
+# Date: May 10th, 2017
+
+# Most intuitive way -- Time Complexity: O(n^2)
+#                    -- Space Complexity: O(1)
+def two_sum(nums, target)
+    for i in 0 .. nums.length - 1
+        for j in i + 1 .. nums.length - 1
+            if nums[i] + nums[j] == target then
+                return [i, j]
+            end
+        end
+    end
+end
+
+# Hash Table -- Time Complexity: O(n)
+#            -- Space Complexity: O(n)
+def two_sum_advance(nums, target)
+  check = Hash.new("")
+  for i in 0 .. nums.length - 1 
+    if check.has_value?(nums[i]) then
+      return [nums.index(target - nums[i]), i]
+    else
+      check[i] = target - nums[i];
+    end
+  end
+end
+
+
