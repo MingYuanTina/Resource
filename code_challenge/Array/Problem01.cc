@@ -1,5 +1,3 @@
-
-
 // Follow up for "Remove Duplicates":
 // What if duplicates are allowed at most twice?
 // For example,
