@@ -1,23 +1,45 @@
 // Question
-	//  41. First Missing Positive
-	// Given an unsorted integer array, 
-	// find the first missing positive integer.
+    // 41. First Missing Positive
+    // Given an unsorted integer array, 
+    // Find the first missing positive integer.
 
-// Test Cases:
-	// [] --> 1 (nothing)
-	// [1,2,0] --> 3 (missing next)
-	// [1] --> 2 (missing next)
-	// [3,4,1,0] --> 2 (missing middle)
-	// [0,2,3,4] --> 1 (missing initial)
-	// [1,1] --> 2 (duplicate cases)
+// Example:
+    //  [] --> 1 (base)
+    // [1,1] --> 2 (duplicate)
+    // [-1, 0] --> 1 (negative and zero)
+    // [1,2] --> 3 (after)
+    // [1,3] --> 2  (middle)
 
-// Constraints 
-	// Time Complexity: O(n)
-	// Space Complexity: O(1)
+// Constraint
+    // Time Complexity: O(n)
+    // Space Complexity: O(1)
 
-// General Strategy:
-	// Normal, (n+1)*n/2 - sum, return leftover
-	// Special
-		// Null: (1)*0/2 - 0 = 0, if 0 return 1? 
-		// Nothing Missing: (n+1)*n/2 - sum == 0, if 0 return?
+// General Strategy
+    // cout sort by sorting the index 
+    // filter out negative and zero cases
+    // go through list and return element where isn't stored
+    // otherwise, there is no missing element in existing array
+    // return max of array + 1
+    // special case: when array is null, return 1
 
+// Solution
+class Solution {
+public:
+    int firstMissingPositive(vector<int>& nums) {
+        map<int, int>list;
+        int max = 0;
+        for (int i = 0; i < nums.size(); i++){
+            if (list.find(nums[i]) == list.end() && nums[i] > 0)
+                list[nums[i]] = 1;
+            if (nums[i] > max)
+                max = nums[i];
+        }
+        if (list.size() == 0) 
+            return 1;
+        for (int i = 1; i <= max; i++){
+            if (list[i] != 1)
+                return i;
+        }
+        return max + 1;
+    }
+};
