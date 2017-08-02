@@ -8,7 +8,7 @@
 
 /**
  * Definition for singly-linked list.
- * struct ListNode {
+ * struct ListNowde {
  *     int val;
  *     ListNode *next;
  *     ListNode(int x) : val(x), next(NULL) {}
