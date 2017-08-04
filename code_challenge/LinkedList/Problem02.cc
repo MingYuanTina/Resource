@@ -13,8 +13,7 @@
 // Solution: Recursion
 /**
  * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
+ * struct ListNode ls *     int val;
  *     ListNode *next;
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
