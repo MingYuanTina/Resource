@@ -26,11 +26,11 @@
 class Solution {
 public:
     int arrangeCoins(int n) {
-        int c = 1;
-        while (n < 0){
+        int c = 0;
+        while (n >= 0){
+            c += 1;
             n -= c;
-            c++;
         }
-        return c;
+        return c - 1;
     }
 };
