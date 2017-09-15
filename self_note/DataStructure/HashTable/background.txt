@@ -1,0 +1,14 @@
+Hash table is a data structure that maps keys to values for highly efficient lookup
+
+This section will expand the concept of hashing as follow:
+1. Hash Table (without conflict and fixed size)
+2. Hash Table (with conflict)
+	a. Direct Addressing
+	b. Linear Probing
+	c. Etc. 
+
+Direct Addressing is the techinique to store key into table
+
+Chaining is the techiniques that store hash table as an array of linked list
+
+Linear Probing is the techiniques that tries to find a free space to store when the table is full (What is the table already reach its capicity already?)
