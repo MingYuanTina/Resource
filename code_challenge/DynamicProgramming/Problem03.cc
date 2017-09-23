@@ -32,3 +32,22 @@ public:
         return l[n-1];
     }
 };
+
+// Solution 2
+class Solution_2 {
+public:
+	int climbingStairs(int n) {
+    map<int, int>A;
+    A[1] = 1;
+    A[2] = 2;
+    return climb(n, A);
+	}
+
+	int climb(int n, map<int, int>&A){
+    if (A[n] != 0){
+       return A[n];
+    }
+    A[n] = climb(n-1, A) + climb(n-2, A);
+    return A[n];
+	}
+}

@@ -53,6 +53,7 @@ int find_h_index(vector<int> & nums){
 int main(){
 	vector<int> a;
 	a.push_back(1);
+	a.push_back(0);
 	int h_index = find_h_index(a);
 	cout << "result: " << h_index << endl;
 	return h_index;
