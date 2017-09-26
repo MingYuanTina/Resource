@@ -18,42 +18,37 @@
 	// [5,4,3,2,1] -> [3]
 	// [4,3,2,1,0] -> [2]
 
+// Implementation
 #include <iostream>
 #include <string>
 #include <vector>
+#include <map>
 #include <sstream>
+#include <algorithm>
 using namespace std;
 
-int find_h_index(vector<int> & nums){
-	// Base Case
-	if (nums.size() == 0)
-		return 0;
-	if (nums.size() == 1)
-		return nums[0];
-	// Recursive Case (Divide and Conquer Algorithm)
-	// Divide
-	int half = nums.size() / 2; 
-	vector<int> first_half;
-	for (int i = 0; i < half; i++){
-		first_half.push_back(nums[i]);
-	}
-	vector<int> second_half;
-	for (int i = half; i < nums.size(); i++){
-		second_half.push_back(nums[i]);
-	}
-	int l1 = find_h_index(first_half);
-	int l2 = find_h_index(second_half);
-	// Conquer
-	if (l1 < second_half[0])
-		return l1 + l2;
-	else 
-		return l1;
+int find_h_index(map<int, int> nums){
+	// Recusive Step
+	int low = 0; 
+	int high = nums.size() - 1;  
+  while(low <= high) {  
+    int idx = (low+high)/2;  
+    if(nums[idx] >= idx + 1) {  
+      low = idx + 1;  
+    } else {  
+      high = idx - 1;  
+    }  
+  }  
+  return low;
 }
 
 int main(){
-	vector<int> a;
-	a.push_back(1);
-	a.push_back(0);
+	map<int, int>a;
+	a[0] = 80;
+	a[1] = 70;
+	a[2] = 60;
+	a[3] = 50;
+	a[4] = 40;
 	int h_index = find_h_index(a);
 	cout << "result: " << h_index << endl;
 	return h_index;
