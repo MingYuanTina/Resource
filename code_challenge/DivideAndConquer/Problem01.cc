@@ -27,29 +27,21 @@
 #include <algorithm>
 using namespace std;
 
-int find_h_index(map<int, int> nums){
-	// Recusive Step
-	int low = 0; 
-	int high = nums.size() - 1;  
-  while(low <= high) {  
-    int idx = (low+high)/2;  
-    if(nums[idx] >= idx + 1) {  
-      low = idx + 1;  
-    } else {  
-      high = idx - 1;  
-    }  
-  }  
-  return low;
-}
-
-int main(){
-	map<int, int>a;
-	a[0] = 80;
-	a[1] = 70;
-	a[2] = 60;
-	a[3] = 50;
-	a[4] = 40;
-	int h_index = find_h_index(a);
-	cout << "result: " << h_index << endl;
-	return h_index;
-}
+class Solution {
+public:
+    int hIndex(vector<int>& citations) {
+        sort(citations.begin(), citations.end());
+        reverse(citations.begin(), citations.end());
+        int low = 0; 
+        int high = citations.size() - 1;  
+          while(low <= high) {  
+            int idx = (low+high)/2;  
+            if(citations[idx] >= idx + 1) {  
+              low = idx + 1;  
+            } else {  
+              high = idx - 1;  
+            }  
+          }  
+          return low;
+    }
+};
