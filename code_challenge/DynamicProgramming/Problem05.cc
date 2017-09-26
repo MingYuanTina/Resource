@@ -17,15 +17,15 @@
 // Implementation
 class Solution {
 public:
-    int rob(int num[], int n) {
-    int even = 0, odd = 0;
-    for (int i=0; i<n; i++){
-        if (i%2 == 0) {
-            even = max(even+num[i], odd);
-        } else {
-            odd = max(even, odd+num[i]);
+    int rob(vector<int>& nums) {
+        int even = 0, odd = 0;
+        for (int i = 0; i < nums.size(); i++){
+            if (i % 2 == 0){
+                even = max(even + nums[i], odd);
+            } else {
+                odd = max(even, odd + nums[i]);
+            }
         }
+        return max(even, odd);
     }
-    return max(even, odd);
-		}
 };
