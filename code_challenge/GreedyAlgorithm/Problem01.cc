@@ -17,7 +17,14 @@
 		// Several subset of intervals --> optimize the maximum
 
 // Claim: greedy gives max # activities
-	// 
+	// Suppose there are two subset
+	// A = {a1, a2, ..., ak} and B = {b1, b2, ... , bl}
+		// Case 1: a1, ... , ai, bi+2, ..., bl is a solution if non-overlapping
+		// Case 2: overlapping problems
+			// Prove by induction
+				// BC: a1, b2, ... ,bl since a1 ends before b1
+				// IH: a1, a2, ..., ai-1, bi, ..., bl
+				// IC: a1, a2, ... ai-1, ai, bi+1, ..., bl
 
 // Implementation
 class Solution {
