@@ -21,3 +21,7 @@
 -- |   5     | House card|   Interesting|   9.1     |
 -- |   1     | War       |   great 3D   |   8.9     |
 -- +---------+-----------+--------------+-----------+
+
+# Write your MySQL query statement below
+# SQL query to output movies with an odd numbered ID and a description that is not 'boring
+SELECT * FROM CINEMA WHERE ID % 2 <> 0 AND DESCRIPTION <> 'boring' ORDER BY RATING DESC;

@@ -26,3 +26,14 @@
 -- // Implementation
 SELECT NAME, POPULATION, AREA FROM WORLD WHERE POPULATION > 25000000 OR AREA > 3000000;
 
+# Equivalent code transformation
+# vector<vector<string> >list
+# for (int i = 0 ; i < World.size(); i++){                                              FROM (LOOP)
+#     if (World[i].population > 25000000 or World[i].area > 3000000){                   WHERE (Condition)
+#         vector<int> temp = { World[i].name, World[i].population, World[i].area }      SELECT (RETURN STATEMENT)
+#         return temp;
+#     }
+# }
+
+# Different approach
+
