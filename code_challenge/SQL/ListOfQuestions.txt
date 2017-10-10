@@ -1,1 +1,14 @@
+// Question 1
+// What is the purpose of having Primary Key and Foreign Key in Database?
 
+
+// What is the meaning of join given its definition
+
+
+// What is the runtime of sql query statement?
+
+
+// What is the advantages and disadvantages of SQL and nonSQL database
+
+
+// 
