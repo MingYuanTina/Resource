@@ -1,6 +1,15 @@
-// Follow up for "Remove Duplicates":
-// What if duplicates are allowed at most twice?
-// For example,
-// Given sorted array nums = [1,1,1,2,2,3],
-// Your function should return length = 5
+// Two Sum, Three Sum, Four Sum Question 
+#include <string>
+#include <iostream>
+#include <sstream>
+#include <vector>
+#include <map>
+using namespace std;
 
+
+
+int main() {
+	cout << "Test: " << endl;
+	vector<int>list = {1,2,3,4,5,6};
+	return 0;
+}
