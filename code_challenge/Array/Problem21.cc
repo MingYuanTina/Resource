@@ -65,33 +65,3 @@ int main(){
 	Solution *bs = new Better_Sol(l, k);
 	cout << bs->containsNearbyDuplicate() << endl;
 }
-
-
-// class Solution {
-// public:
-//     bool containsNearbyDuplicate(vector<int>& nums, int k) {
-//         // Simple solution; Runtime O(n^2); Space: O(1)
-//         // for (int i = 0; i < nums.size(); i++){
-//         //     for (int j = i; j < nums.size(); j++) {
-//         //         if (nums[i] == nums[j] && j- i <= k){
-//         //             return true;
-//         //         }
-//         //     }
-//         // }
-//         // return false;
-        
-//         // Next question: Is there any better solution?
-//         map<int, int>list;        
-//         for (int i = 0; i < nums.size(); i++){
-//             map<int, int>::iterator it = list.find(nums[i]);
-//             if (it != list.end()){
-//                 if (i - it->second <= k){
-//                     return true;
-//                 }
-//             } else {
-//                 list[nums[i]] = i;   
-//             }
-//         }
-//         return false;
-//     }
-// };
