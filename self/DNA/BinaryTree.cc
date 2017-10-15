@@ -11,6 +11,22 @@ struct Node {
 	Node *right;
 };
 
+class BinaryTree {
+private:
+    Node *root;
+
+public:
+    BinaryTree(){
+        root = NULL;
+    }
+
+    
+};
+
+
+
 int main() {
+    BinaryTree b;
+    b.Insert(5);
 	return 0;
 }
