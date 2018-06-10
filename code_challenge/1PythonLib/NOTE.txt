@@ -1,0 +1,14 @@
+commit msg
+**** Type of Problem	****
+	1. Algo -- DP, Divide and Conquer, Graph etc.
+	2. SQL
+	3. Impl (Implementation)/ Design
+
+**** Use case/Key concept **** 
+	e.g. solution strategy 
+
+**** Hard level ****
+ 	1. pass at once
+ 	2. pass without reference
+ 	3. pass with reference
+ 	4. pass with solution
