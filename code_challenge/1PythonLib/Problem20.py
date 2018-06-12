@@ -37,6 +37,8 @@ class Solution:
     #                 max_d = dis
     # return max_d
     
+    ##### NOTE: DP by breaking problem into sub-problems ######
+    ##### NOE: edge case --> max_distance cannot be distance from same array #####
     # improved version 2 (based on version 1 and stored min and max)
     min_v = arrays[0][0]
     max_v = arrays[0][len(arrays[0])-1]
@@ -52,3 +54,6 @@ class Solution:
 s = Solution()
 arrays = [[1,2,3],[4,5],[1,2,3]]
 print(s.maxDistance(arrays))
+
+
+
