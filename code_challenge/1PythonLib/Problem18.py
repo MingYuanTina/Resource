@@ -35,7 +35,9 @@ class Solution:
     for i in range(len(words)):
       temp = ""
       for j in range(len(words)):
-        if i < len(words[j]):
+        ##### NOTE: words might not be perfect square ####
+        ##### Therefore, we also need to check the value ####
+        if i < len(words[j]):  
           temp += words[j][i]
       s.append(temp)
     # Evaluate if each word matches
