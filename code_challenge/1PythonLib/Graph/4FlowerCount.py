@@ -4,7 +4,6 @@ import operator
 # HELPER FUNCTION
 def process_matrix(matrix, row, col):
 	d = {}
-
 	for i in range(0, row):
 		for j in range(0, col):
 			temp = matrix[i][j]
@@ -23,6 +22,7 @@ def process_dic(dic):
 def print_result(res):
 	print len(res)
 	for i in range(0, len(res)):
+		#print(res[i])
 		print res[i][1], res[i][0]
 
 # read input
