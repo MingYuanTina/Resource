@@ -210,6 +210,30 @@ class BFS(object):
             queue = nl
         return res
 
+    def pruneTree(self, root):
+        """
+        :type root: TreeNode
+        :rtype: TreeNode
+        """
+        # subtree is removed when either children == None or contains all zero and node.val = 0
+        # such contains satisfies, then return true, else return false
+        # a child is deleted when either left or right tree is none 
+        def pruneTreeHelper(root):
+            if root == None:
+                return True
+            else:
+                leftTree = pruneTreeHelper(root.left)
+                rightTree = pruneTreeHelper(root.right)
+                if root.val == 0 and leftTree and rightTree:
+                    return True
+                if leftTree:
+                    root.left = None
+                if rightTree:
+                    root.right = None
+                return False 
+        temp = pruneTreeHelper(root)
+        return root
+
 # EXAMPLE
 #         3
 #       9   20
