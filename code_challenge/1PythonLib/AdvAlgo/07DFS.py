@@ -18,7 +18,7 @@ class DFS(object):
 	def binaryTreePaths(self, root):
 	        """
 	        : DESCRIPTION
-	        : 257. Binary Tree Paths
+	        : 257. Binarsy Tree Paths
 	        : Given a binary tree, return all root-to-leaf paths.
 	        
 	        : TYPE

@@ -1,3 +1,5 @@
+import collections
+
 # PROBLME GENERAL
 class DP(object):
     def minCostClimbingStairs(self, cost):
@@ -81,6 +83,74 @@ class DP(object):
             nums.append(min_val)
         return nums[amount]  
 
+    def lengthOfLIS(self, nums):
+        # PROBLEM DESCRIPTION
+        # 322. Coin Change
+
+        # PROBLEM DESCRIPTION
+        # Given a list of non-negative integers,
+        # return the max length of continous increasing subsequence
+
+        # PROBLEM TYPE
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        # initialization
+        l = [1] * len(nums)
+        
+        # list of largest continous length at index n
+        for i in range(0, len(nums)):
+            for j in range(0, i):
+                if nums[i] > nums[j] and l[i] < l[j] + 1:
+                    l[i] = l[j] + 1
+            
+        max_len = 0
+        for temp in l:
+            if temp > max_len:
+                max_len = temp
+        return max_len
+
+    def deleteAndEarn(self, nums):
+        # PROBLEM DESCRIPTION
+        # 740. Delete and Earn
+
+        # PROBLEM DESCRIPTION
+        # Given an array nums of integers, you can perform operations on the array.
+        # In each operation, you pick any nums[i] and delete it to earn nums[i] points. 
+        # After, you must delete every element equal to nums[i] - 1 or nums[i] + 1.
+        
+        # PROBLEM TYPE
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        # BASE CASE
+        if not nums:
+            return 0
+        # OTHER CASE
+        count_dic = collections.Counter(nums)
+        dic = collections.defaultdict(lambda:0, count_dic)
+        highest = max(nums)
+        res = []
+        i = 0
+        for num in range(1, highest+1):
+            if num == 1 or num == 2:
+                res.append(num * dic[num])
+            elif num == 3:
+                res.append(res[i-2] + num * dic[num]) 
+            else:
+                res.append(max(res[i-2], res[i-3]) + num * dic[num])
+            i += 1
+            
+        max_len = 0
+        for i in range(0, len(res)):
+            if max_len < res[i]:
+                max_len = res[i]
+        return max_len
+
+
+
 
 # PROBLEM NAME -- 303. Range Sum Query - Immutable
 class NumArray(object):
@@ -120,12 +190,21 @@ print obj1.coinChange(coins, amount)
 print ""
 print "RANGE SUM QUERY"
 nums = [-2, 0, 3, -5, 2, -1]
+print "INPUT: ", nums
 obj2 = NumArray(nums)
 print obj2.sumRange(0, 2) # 1
 print obj2.sumRange(2, 5) # -1
 print obj2.sumRange(0, 5) # -3
 
+print ""
+print "LENGTH OF LONGEST CONTINUOUS SUBSEQUENCE"
+nums = [10,9,2,5,3,7,101,18]
+print "INPUT: ", nums
+print "OUTPUT: ", obj1.lengthOfLIS(nums)
 
-
-
+print ""
+print "Delete and EARN"
+nums = [8,10,4,9,1,3,5,9,4,10]
+print "INPUT: ", nums
+print "OUTPUT: ", obj1.deleteAndEarn(nums)
 

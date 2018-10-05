@@ -160,6 +160,65 @@ class Greedy(object):
         else:
             return len(tasks)
 
+    def partitionLabels(self, S):
+        # PROBLEM NAME
+        # 763. Partition Labels
+        
+        # Given a string, partition into substring as much as possible
+        # with not each substring has common character
+        # return each substring length as a list
+
+        """
+        :type S: str
+        :rtype: List[int]
+        """
+        def mergeInterval(i1, i2):
+            x1 = i1[0]
+            x2 = i2[0]
+            y1 = i1[1]
+            y2 = i2[1]
+            if x1 >= y2 or x2 >= y1:
+                return None
+            else:
+                return [min(x1, x2), max(y1, y2)]
+        
+        # Step 1: Store each character start_index and end_index as tuple (index_list)
+        # Step 2: Sort index_list by start_index 
+        # Step 3: Scanning through index_list one by one 
+        #       1. merge two tuples if they are overlap
+        #       2. otherwise, keep them as seperate intervals
+        
+        # Step 1:
+        start_list = list(S)
+        reverse_list = start_list[:]
+        reverse_list.reverse()
+        dic = collections.Counter(start_list)
+        index_list = []
+        for key in dic.keys():
+            start_index = start_list.index(key)
+            end_index = len(start_list) - reverse_list.index(key) - 1
+            index_list.append((start_index, end_index))
+        
+        # Step 2:
+        index_list.sort(key=lambda x: x[0])
+        
+        # Step 3:
+        res = [index_list[0]]
+        for i in range(1, len(index_list)):
+            i1 = res[len(res) - 1]
+            i2 = index_list[i]
+            temp = mergeInterval(i1, i2)
+            if not temp:
+                res.append(i2)
+            else:
+                res[len(res)-1] = temp
+        
+        # Step 4:
+        res_diff = []
+        for i in range(0, len(res)):
+            res_diff.append(res[i][1] - res[i][0] + 1)
+        return res_diff
+
 obj = Greedy()
 
 # MAX PROFIT
@@ -192,4 +251,12 @@ print "leastInterval: ", obj.leastInterval(tasks, n)
 N = 10
 print ""
 print "monotoneIncreasingDigits: ", obj.monotoneIncreasingDigits(N)
+
+
+# Partition Labels
+S = "ababcbacadefegdehijhklij"
+print ""
+print "partitionLabels", obj.partitionLabels(S)
+
+
 
