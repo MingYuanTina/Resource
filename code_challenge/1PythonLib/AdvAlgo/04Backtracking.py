@@ -47,9 +47,11 @@ class Solution(object):
 					res.append([nums[i]]+subset)
 			self.res = res
 		return res
+	
+
 
 def main():
-	user_input = [1,2]
+	user_input = [1,2,3]
 	s = Solution()
 	s.calculate_permutation(user_input)
 	s.get_result()
