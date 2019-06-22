@@ -30,10 +30,10 @@ class Solution(object):
 
 
 	# permutation without repetitation
-	# formula --> n!/(n-r)!
+	# formula -> n!/(n-r)!
 	# [1,2,3]
-	# [[1], permute([2,3], 1)] --> [[2], permute[]] --> [[2]]
-      	#   permute([3], 1) --> [[3], permute[]] --> [3]
+	# [[1],  permute([2,3], 1)  -> [[2], permute[]] -> [[2]]
+      	#    permute([3], 1)    -> [[3], permute[]] -> [3]
      # [[2], permute([3], 1)
 	def calculate_combination(self, nums, k):
 		res = []

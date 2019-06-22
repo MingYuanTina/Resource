@@ -1,11 +1,12 @@
 # Oct 19th, 2017
 
-# *********************************** Problem 1 ***********************
+# *********************************** Problem 1 ***********************************
 # 890. Find and Replace Pattern
 	# You have a list of words and a pattern, and 
 	# you want to know which words in words matches the pattern.
 	# A word matches the pattern if there exists a permutation of 
-	# letters p so that after replacing every letter x in the pattern with p(x), we get the desired word.
+	# letters p so that after replacing every letter x 
+	# in the pattern with p(x), we get the desired word.
 	# Return a list of the words in words that match the given pattern. 
 class StringMatch(object):
     # Processing pattern
@@ -65,3 +66,25 @@ strMatch = StringMatch()
 words = ["abc","deq","mee","aqq","dkd","ccc"]; pattern = "abb"
 print strMatch.findAndReplacePattern(words, pattern)
 
+# QUESTION TO DO LIST
+# 1. 609. Find Duplicate File in System --> Dictionary
+# 2. 647. Palindromic Substrings --> DP
+# 3. 791. Custom Sort String
+# 4. Evaluation of Prefix/Postifx Expression
+
+# class PrefixEvaluation(object):
+#     def __init__(self):
+
+# SQUARE
+# 6. BFS on input strings
+# 7. String manipulation question
+# 8. Implement payment system / Design an elevator / Design calculator
+# 9. Simulation Oriented (e.g. write a recursive sudoku solver  )
+# 10. Make a function that calculates relative path  
+
+# BENCHLING
+# 11. An algorithm problem involving manipulating DNA sequences.  
+# 12. bio-related algorithm questions
+
+# NAV TALENT
+# RIDEBILL --> cool idea

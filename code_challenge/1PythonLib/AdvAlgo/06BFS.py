@@ -16,7 +16,7 @@ class BFS(object):
         """
         res = self.levelOrder(root)
         res.reverse()
-        return res    
+        return res 
 
     def levelOrder(self, root):
         """
@@ -41,6 +41,24 @@ class BFS(object):
                 if node.right:
                     next_level.append(node.right)
             res.append(temp)
+            queue = next_level
+        return res
+
+    def minDepth(self, root):
+        if not root:
+            return 0
+        queue = [root]
+        res = 0
+        while queue:
+            next_level = []
+            res += 1
+            for node in queue:
+                if node.left == None and node.right == None:
+                    return res 
+                if node.left:
+                    next_level.append(node.left)
+                if node.right:
+                    next_level.append(node.right)
             queue = next_level
         return res
 
